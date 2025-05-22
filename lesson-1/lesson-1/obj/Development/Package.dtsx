@@ -1,0 +1,2339 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/15/2025 8:23:06 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ASUS-EXPERTBOOK"
+  DTS:CreatorName="ASUS-EXPERTBOOK\Hp"
+  DTS:DTSID="{C7093AC0-3928-481D-888D-DBCC827ADFB1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{6F2C4606-2627-4B06-9491-1B20FF6E9BED}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ASUS-EXPERTBOOK\SQLEXPRESS.ssis]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{466BF512-5FF2-4C0E-9A16-E83D1CB345E1}"
+      DTS:ObjectName="ASUS-EXPERTBOOK\SQLEXPRESS.ssis">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ASUS-EXPERTBOOK\SQLEXPRESS;Initial Catalog=ssis;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{466BF512-5FF2-4C0E-9A16-E83D1CB345E1}ASUS-EXPERTBOOK\SQLEXPRESS.ssis;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{8D12E3E0-D12B-49B6-AEF0-525484AD6659}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\maab\ssis\lesson-1\emp.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A75C02E7-D95C-48FC-B191-6CF9EBEB5C1D}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\maab\ssis\lesson-1\emp.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{BC6EDFDC-2D17-45A2-A3B9-AA160055EE26}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{BC93D472-12FC-4F77-B056-DEA08B8CD9FF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age"
+              DTS:DTSID="{2FA80549-C30C-4E95-A907-7C608A4E794B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C8E44EBE-CE57-4FDD-915C-039977018F2D}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\maab\ssis\lesson-1\ErrorLog.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{F1DB1F47-6830-4F83-AB23-63E66B730FFF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{E8A777B2-50E6-4A21-948C-9B03F4CA3CA6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age"
+              DTS:DTSID="{55C4CE93-79A3-4F7A-A42B-150CB3024779}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nid"
+              DTS:DTSID="{0FB8BCED-F706-4DDA-8154-FBDA402A6CE5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nname"
+              DTS:DTSID="{0E3619A3-03B9-4813-86ED-4F1BFBBF6E5B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nage"
+              DTS:DTSID="{5A8CB4D0-3BC1-4E9B-A272-24F799AF84F3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LoadDateTime"
+              DTS:DTSID="{229B07F5-EFC7-412C-B38C-4DA398F8AE6D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MonthforAge"
+              DTS:DTSID="{A169CA8A-3ED3-44D1-9BE6-D201BD8BF3D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SourceType"
+              DTS:DTSID="{8455E146-3416-44B9-9A56-998C0351E46C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 2]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1CAD2C79-7909-4E00-B2A3-942BBE34842D}"
+      DTS:ObjectName="Flat File Connection Manager 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\maab\ssis\lesson-1\ErrorLog.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{59BB293F-169B-4C64-8356-B761586A7C47}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{67346DB8-7CB8-4448-8015-41996F09AEB3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age"
+              DTS:DTSID="{04136D5D-668A-4E3F-8DF4-66B5D87C323D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nid"
+              DTS:DTSID="{8F5848D0-D238-4F4A-8BE1-4BA35EAA48CD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nname"
+              DTS:DTSID="{8ABD2D9D-5544-4736-9FE1-223C16AFE27C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nage"
+              DTS:DTSID="{1FF8A054-9590-4E63-A9C4-1CB0B4B6040A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LoadDateTime"
+              DTS:DTSID="{272274C6-FBBB-4C40-A13D-DCA5DDB2E2AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MonthforAge"
+              DTS:DTSID="{DFE2C150-7DB2-4AE7-B1D8-07BABAF2ED8D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SourceType"
+              DTS:DTSID="{577E65E8-BDD5-4116-8DB3-88FB7A41B3AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="11"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ValidationMessage"
+              DTS:DTSID="{7BAD23BA-3FAA-45BB-BD03-724A2ED259E5}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C7C76009-EC9A-458B-89E8-EA257D75E38E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="sheet1">
+      <DTS:VariableValue
+        DTS:DataType="8">select * from [employees$]</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CEB7655C-A628-46AA-AA62-AED24846C605}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="sheetname1">
+      <DTS:VariableValue
+        DTS:DataType="8">sheet1$</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\load file from excel and flat"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{CAD9CD99-EE70-4DB3-BEA1-4AA82BE572E3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="load file from excel and flat"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\load file from excel and flat\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\load file from excel and flat\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Conditional Split.Inputs[Conditional Split Input].Columns[nage]"
+                      cachedDataType="r8"
+                      cachedName="nage"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nage]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load file from excel and flat\Conditional Split.Outputs[Case 1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Case 1"
+                  synchronousInputId="Package\load file from excel and flat\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nage]} &lt;= 18</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">nage &lt;= 18</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\load file from excel and flat\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\load file from excel and flat\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\load file from excel and flat\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\load file from excel and flat\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load file from excel and flat\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\load file from excel and flat\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Data Conversion.Inputs[Data Conversion Input].Columns[id]"
+                      cachedDataType="r8"
+                      cachedName="id"
+                      lineageId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Data Conversion.Inputs[Data Conversion Input].Columns[name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="name"
+                      lineageId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Data Conversion.Inputs[Data Conversion Input].Columns[age]"
+                      cachedDataType="r8"
+                      cachedName="age"
+                      lineageId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].Columns[age]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load file from excel and flat\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\load file from excel and flat\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Data Conversion.Outputs[Data Conversion Output].Columns[nid]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\load file from excel and flat\Data Conversion.Outputs[Data Conversion Output].Columns[nid]"
+                      name="nid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].Columns[id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Data Conversion.Outputs[Data Conversion Output].Columns[nage]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\load file from excel and flat\Data Conversion.Outputs[Data Conversion Output].Columns[nage]"
+                      name="nage"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].Columns[age]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Data Conversion.Outputs[Data Conversion Output].Columns[nname]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\load file from excel and flat\Data Conversion.Outputs[Data Conversion Output].Columns[nname]"
+                      name="nname"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].Columns[name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\load file from excel and flat\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\load file from excel and flat\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load file from excel and flat\Data Conversion 1"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\load file from excel and flat\Data Conversion 1.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Data Conversion 1.Inputs[Data Conversion Input].Columns[id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="id"
+                      lineageId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Data Conversion 1.Inputs[Data Conversion Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="name"
+                      lineageId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Data Conversion 1.Inputs[Data Conversion Input].Columns[age]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="age"
+                      lineageId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].Columns[age]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\load file from excel and flat\Data Conversion 1.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Output].Columns[nid]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Output].Columns[nid]"
+                      name="nid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].Columns[id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Output].Columns[nname]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Output].Columns[nname]"
+                      name="nname"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].Columns[name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Output].Columns[nage]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Output].Columns[nage]"
+                      name="nage"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].Columns[age]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\load file from excel and flat\Data Conversion 1.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load file from excel and flat\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\load file from excel and flat\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Derived Column.Inputs[Derived Column Input].Columns[nage]"
+                      cachedDataType="r8"
+                      cachedName="nage"
+                      lineageId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Output].Columns[nage]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load file from excel and flat\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\load file from excel and flat\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Derived Column.Outputs[Derived Column Output].Columns[LoadDateTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\load file from excel and flat\Derived Column.Outputs[Derived Column Output].Columns[LoadDateTime]"
+                      name="LoadDateTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Derived Column.Outputs[Derived Column Output].Columns[MonthforAge]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\load file from excel and flat\Derived Column.Outputs[Derived Column Output].Columns[MonthforAge]"
+                      name="MonthforAge"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Output].Columns[nage]} * 12</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">nage * 12</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Derived Column.Outputs[Derived Column Output].Columns[SourceType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="4"
+                      lineageId="Package\load file from excel and flat\Derived Column.Outputs[Derived Column Output].Columns[SourceType]"
+                      name="SourceType"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Flat"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Flat"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\load file from excel and flat\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\load file from excel and flat\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load file from excel and flat\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\load file from excel and flat\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Derived Column 1.Inputs[Derived Column Input].Columns[age]"
+                      cachedDataType="r8"
+                      cachedName="age"
+                      lineageId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].Columns[age]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load file from excel and flat\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\load file from excel and flat\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Derived Column 1.Outputs[Derived Column Output].Columns[LoadDateTime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\load file from excel and flat\Derived Column 1.Outputs[Derived Column Output].Columns[LoadDateTime]"
+                      name="LoadDateTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Derived Column 1.Outputs[Derived Column Output].Columns[MonthforAge]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\load file from excel and flat\Derived Column 1.Outputs[Derived Column Output].Columns[MonthforAge]"
+                      name="MonthforAge"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].Columns[age]} * 12</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">age * 12</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Derived Column 1.Outputs[Derived Column Output].Columns[SourceType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\load file from excel and flat\Derived Column 1.Outputs[Derived Column Output].Columns[SourceType]"
+                      name="SourceType"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Excel"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Excel"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\load file from excel and flat\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\load file from excel and flat\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load file from excel and flat\Derived Column 2"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\load file from excel and flat\Derived Column 2.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load file from excel and flat\Derived Column 2.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\load file from excel and flat\Derived Column 2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Derived Column 2.Outputs[Derived Column Output].Columns[ValidationMessage]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="11"
+                      lineageId="Package\load file from excel and flat\Derived Column 2.Outputs[Derived Column Output].Columns[ValidationMessage]"
+                      name="ValidationMessage"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Missing Age"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Missing Age"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\load file from excel and flat\Derived Column 2.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\load file from excel and flat\Derived Column 2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load file from excel and flat\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">employees$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::sheet1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\load file from excel and flat\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].Columns[id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].ExternalColumns[id]"
+                      lineageId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].Columns[name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].ExternalColumns[name]"
+                      length="255"
+                      lineageId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].Columns[age]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].ExternalColumns[age]"
+                      lineageId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].ExternalColumns[id]"
+                      dataType="r8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="255"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output].ExternalColumns[age]"
+                      dataType="r8"
+                      name="age" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Error Output].Columns[id]"
+                      dataType="r8"
+                      lineageId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Error Output].Columns[name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Error Output].Columns[name]"
+                      name="name" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Error Output].Columns[age]"
+                      dataType="r8"
+                      lineageId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Error Output].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load file from excel and flat\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\load file from excel and flat\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 2]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].Columns[nid]"
+                      cachedDataType="r8"
+                      cachedName="nid"
+                      externalMetadataColumnId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nid]" />
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].Columns[nname]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="nname"
+                      externalMetadataColumnId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[name]"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nname]" />
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].Columns[nage]"
+                      cachedDataType="r8"
+                      cachedName="nage"
+                      externalMetadataColumnId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[age]"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nage]" />
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].Columns[LoadDateTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LoadDateTime"
+                      externalMetadataColumnId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LoadDateTime]"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[LoadDateTime]" />
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].Columns[MonthforAge]"
+                      cachedDataType="r8"
+                      cachedName="MonthforAge"
+                      externalMetadataColumnId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[MonthforAge]"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[MonthforAge]" />
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].Columns[SourceType]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="SourceType"
+                      externalMetadataColumnId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SourceType]"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[SourceType]" />
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].Columns[ValidationMessage]"
+                      cachedDataType="wstr"
+                      cachedLength="11"
+                      cachedName="ValidationMessage"
+                      externalMetadataColumnId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ValidationMessage]"
+                      lineageId="Package\load file from excel and flat\Derived Column 2.Outputs[Derived Column Output].Columns[ValidationMessage]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[nid]"
+                      dataType="r8"
+                      name="nid" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[nname]"
+                      dataType="wstr"
+                      length="50"
+                      name="nname" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[nage]"
+                      dataType="r8"
+                      name="nage" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LoadDateTime]"
+                      dataType="dbTimeStamp"
+                      name="LoadDateTime" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[MonthforAge]"
+                      dataType="r8"
+                      name="MonthforAge" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SourceType]"
+                      dataType="wstr"
+                      length="5"
+                      name="SourceType" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ValidationMessage]"
+                      dataType="wstr"
+                      length="11"
+                      name="ValidationMessage" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\load file from excel and flat\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\load file from excel and flat\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      length="50"
+                      lineageId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      length="50"
+                      lineageId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].Columns[age]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age]"
+                      length="50"
+                      lineageId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="age" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load file from excel and flat\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[lesson1]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\load file from excel and flat\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ASUS-EXPERTBOOK\SQLEXPRESS.ssis]"
+                  connectionManagerRefId="Package.ConnectionManagers[ASUS-EXPERTBOOK\SQLEXPRESS.ssis]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nid]"
+                      cachedDataType="r8"
+                      cachedName="nid"
+                      externalMetadataColumnId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nid]"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nid]" />
+                    <inputColumn
+                      refId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nname]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="nname"
+                      externalMetadataColumnId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nname]"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nname]" />
+                    <inputColumn
+                      refId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nage]"
+                      cachedDataType="r8"
+                      cachedName="nage"
+                      externalMetadataColumnId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nage]"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nage]" />
+                    <inputColumn
+                      refId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoadDateTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LoadDateTime"
+                      externalMetadataColumnId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoadDateTime]"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[LoadDateTime]" />
+                    <inputColumn
+                      refId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MonthforAge]"
+                      cachedDataType="r8"
+                      cachedName="MonthforAge"
+                      externalMetadataColumnId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MonthforAge]"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[MonthforAge]" />
+                    <inputColumn
+                      refId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SourceType]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="SourceType"
+                      externalMetadataColumnId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SourceType]"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[SourceType]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nid]"
+                      dataType="r8"
+                      name="nid" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nname]"
+                      dataType="wstr"
+                      length="50"
+                      name="nname" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nage]"
+                      dataType="r8"
+                      name="nage" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoadDateTime]"
+                      dataType="dbTimeStamp"
+                      name="LoadDateTime" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MonthforAge]"
+                      dataType="r8"
+                      name="MonthforAge" />
+                    <externalMetadataColumn
+                      refId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SourceType]"
+                      dataType="wstr"
+                      length="5"
+                      name="SourceType" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load file from excel and flat\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load file from excel and flat\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load file from excel and flat\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 1].Columns[id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="id"
+                      lineageId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].Columns[id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 1].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="name"
+                      lineageId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].Columns[name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 1].Columns[age]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="age"
+                      lineageId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output].Columns[age]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[age]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 1].Columns[nid]"
+                      cachedDataType="r8"
+                      cachedName="nid"
+                      lineageId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Output].Columns[nid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 1].Columns[nname]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="nname"
+                      lineageId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Output].Columns[nname]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nname]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 1].Columns[nage]"
+                      cachedDataType="r8"
+                      cachedName="nage"
+                      lineageId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Output].Columns[nage]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nage]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 1].Columns[LoadDateTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LoadDateTime"
+                      lineageId="Package\load file from excel and flat\Derived Column.Outputs[Derived Column Output].Columns[LoadDateTime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[LoadDateTime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 1].Columns[MonthforAge]"
+                      cachedDataType="r8"
+                      cachedName="MonthforAge"
+                      lineageId="Package\load file from excel and flat\Derived Column.Outputs[Derived Column Output].Columns[MonthforAge]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[MonthforAge]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 1].Columns[SourceType]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="SourceType"
+                      lineageId="Package\load file from excel and flat\Derived Column.Outputs[Derived Column Output].Columns[SourceType]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[SourceType]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 2].Columns[nid]"
+                      cachedDataType="r8"
+                      cachedName="nid"
+                      lineageId="Package\load file from excel and flat\Data Conversion.Outputs[Data Conversion Output].Columns[nid]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nid]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 2].Columns[nage]"
+                      cachedDataType="r8"
+                      cachedName="nage"
+                      lineageId="Package\load file from excel and flat\Data Conversion.Outputs[Data Conversion Output].Columns[nage]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nage]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 2].Columns[nname]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="nname"
+                      lineageId="Package\load file from excel and flat\Data Conversion.Outputs[Data Conversion Output].Columns[nname]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nname]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 2].Columns[LoadDateTime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LoadDateTime"
+                      lineageId="Package\load file from excel and flat\Derived Column 1.Outputs[Derived Column Output].Columns[LoadDateTime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[LoadDateTime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 2].Columns[MonthforAge]"
+                      cachedDataType="r8"
+                      cachedName="MonthforAge"
+                      lineageId="Package\load file from excel and flat\Derived Column 1.Outputs[Derived Column Output].Columns[MonthforAge]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[MonthforAge]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 2].Columns[SourceType]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="SourceType"
+                      lineageId="Package\load file from excel and flat\Derived Column 1.Outputs[Derived Column Output].Columns[SourceType]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[SourceType]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\load file from excel and flat\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[name]"
+                      name="name" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nid]"
+                      dataType="r8"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nid]"
+                      name="nid" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nname]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nname]"
+                      name="nname" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nage]"
+                      dataType="r8"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[nage]"
+                      name="nage" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[LoadDateTime]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[LoadDateTime]"
+                      name="LoadDateTime" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[MonthforAge]"
+                      dataType="r8"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[MonthforAge]"
+                      name="MonthforAge" />
+                    <outputColumn
+                      refId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[SourceType]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1].Columns[SourceType]"
+                      name="SourceType" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\load file from excel and flat.Paths[Case 1]"
+              endId="Package\load file from excel and flat\Derived Column 2.Inputs[Derived Column Input]"
+              name="Case 1"
+              startId="Package\load file from excel and flat\Conditional Split.Outputs[Case 1]" />
+            <path
+              refId="Package\load file from excel and flat.Paths[Conditional Split Default Output]"
+              endId="Package\load file from excel and flat\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Conditional Split Default Output"
+              startId="Package\load file from excel and flat\Conditional Split.Outputs[Conditional Split Default Output]" />
+            <path
+              refId="Package\load file from excel and flat.Paths[Data Conversion Output]"
+              endId="Package\load file from excel and flat\Derived Column.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\load file from excel and flat\Data Conversion 1.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\load file from excel and flat.Paths[Data Conversion Output1]"
+              endId="Package\load file from excel and flat\Derived Column 1.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\load file from excel and flat\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\load file from excel and flat.Paths[Derived Column Output]"
+              endId="Package\load file from excel and flat\Union All.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\load file from excel and flat\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\load file from excel and flat.Paths[Derived Column Output1]"
+              endId="Package\load file from excel and flat\Union All.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\load file from excel and flat\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\load file from excel and flat.Paths[Derived Column Output2]"
+              endId="Package\load file from excel and flat\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Derived Column Output"
+              startId="Package\load file from excel and flat\Derived Column 2.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\load file from excel and flat.Paths[Excel Source Output]"
+              endId="Package\load file from excel and flat\Data Conversion.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\load file from excel and flat\Excel Source.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\load file from excel and flat.Paths[Flat File Source Output]"
+              endId="Package\load file from excel and flat\Data Conversion 1.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\load file from excel and flat\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\load file from excel and flat.Paths[Union All Output 1]"
+              endId="Package\load file from excel and flat\Conditional Split.Inputs[Conditional Split Input]"
+              name="Union All Output 1"
+              startId="Package\load file from excel and flat\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\load file from excel and flat"
+          TopLeft="586.666634612615,43.3333330319987" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\load file from excel and flat">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\load file from excel and flat\Excel Source"
+          TopLeft="539.999991953373,12.9999998062849" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\load file from excel and flat\Flat File Source"
+          TopLeft="856.999987229705,17.9999997317791" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\load file from excel and flat\Derived Column 1"
+          TopLeft="531.999992072582,155.999997675419" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\load file from excel and flat\Derived Column"
+          TopLeft="860.9999871701,151.999997735023" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\load file from excel and flat\Data Conversion"
+          TopLeft="530.999992087483,84.9999987334013" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\load file from excel and flat\Data Conversion 1"
+          TopLeft="856.999987229705,83.9999987483025" />
+        <EdgeLayout
+          Id="Package\load file from excel and flat.Paths[Flat File Source Output]"
+          TopLeft="935.799987229705,59.5999997317791">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.3999990165234"
+              Start="0,0"
+              End="0,16.8999990165234">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.8999990165234" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load file from excel and flat.Paths[Data Conversion Output]"
+          TopLeft="938.199987199902,125.599998748302">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.399998986721"
+              Start="0,0"
+              End="0,18.899998986721">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.899998986721" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load file from excel and flat.Paths[Excel Source Output]"
+          TopLeft="609.499992020428,54.5999998062849">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.3999989271163"
+              Start="0,0"
+              End="0,22.8999989271163">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.8999989271163" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load file from excel and flat.Paths[Data Conversion Output1]"
+          TopLeft="610.899992080033,126.599998733401">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.3999989420175"
+              Start="0,0"
+              End="0,21.8999989420175">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.8999989420175" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\load file from excel and flat\Union All"
+          TopLeft="713.999989360571,232.999996528029" />
+        <EdgeLayout
+          Id="Package\load file from excel and flat.Paths[Derived Column Output]"
+          TopLeft="937.3999871701,193.599997735023">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-144.733331142862,39.3999987930059"
+              Start="0,0"
+              End="-144.733331142862,31.8999987930059">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.3289466537535" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.3289466537535"
+                    Point2="0,23.3289466537535"
+                    Point3="-4,23.3289466537535" />
+                  <mssgle:LineSegment
+                    End="-140.733331142862,23.3289466537535" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-140.733331142862,23.3289466537535"
+                    Point2="-144.733331142862,23.3289466537535"
+                    Point3="-144.733331142862,27.3289466537535" />
+                  <mssgle:LineSegment
+                    End="-144.733331142862,31.8999987930059" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load file from excel and flat.Paths[Derived Column Output1]"
+          TopLeft="612.799992072582,197.599997675419">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="142.533330621322,35.3999988526106"
+              Start="0,0"
+              End="142.533330621322,27.8999988526106">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.9605256364142" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.9605256364142"
+                    Point2="0,20.9605256364142"
+                    Point3="4,20.9605256364142" />
+                  <mssgle:LineSegment
+                    End="138.533330621322,20.9605256364142" />
+                  <mssgle:CubicBezierSegment
+                    Point1="138.533330621322,20.9605256364142"
+                    Point2="142.533330621322,20.9605256364142"
+                    Point3="142.533330621322,24.9605256364142" />
+                  <mssgle:LineSegment
+                    End="142.533330621322,27.8999988526106" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\load file from excel and flat\OLE DB Destination"
+          TopLeft="486.999992743134,547.999991834164" />
+        <NodeLayout
+          Size="170.4,64.8"
+          Id="Package\load file from excel and flat\Flat File Destination"
+          TopLeft="898.999986603856,569.799992117286" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\load file from excel and flat\Conditional Split"
+          TopLeft="715.999989330769,378.99999512732" />
+        <EdgeLayout
+          Id="Package\load file from excel and flat.Paths[Conditional Split Default Output]"
+          TopLeft="768.533322664102,420.59999512732">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-195.933329920968,127.399996706843"
+              Start="0,0"
+              End="-195.933329920968,119.899996706843">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.7480398994807" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.7480398994807"
+                    Point2="0,51.7480398994807"
+                    Point3="-4,51.7480398994807" />
+                  <mssgle:LineSegment
+                    End="-191.933329920968,51.7480398994807" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-191.933329920968,51.7480398994807"
+                    Point2="-195.933329920968,51.7480398994807"
+                    Point3="-195.933329920968,55.7480398994807" />
+                  <mssgle:LineSegment
+                    End="-195.933329920968,119.899996706843" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-168.580571210484,56.7480398994807,141.2278125,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load file from excel and flat.Paths[Union All Output 1]"
+          TopLeft="773.999989360571,274.599996528029">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.7999999701976,104.399998599291"
+              Start="0,0"
+              End="18.7999999701976,96.8999985992909">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.1999992996454" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48.1999992996454"
+                    Point2="0,52.1999992996454"
+                    Point3="4,52.1999992996454" />
+                  <mssgle:LineSegment
+                    End="14.7999999701976,52.1999992996454" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.7999999701976,52.1999992996454"
+                    Point2="18.7999999701976,52.1999992996454"
+                    Point3="18.7999999701976,56.1999992996454" />
+                  <mssgle:LineSegment
+                    End="18.7999999701976,96.8999985992909" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\load file from excel and flat\Derived Column 2"
+          TopLeft="848.999987348914,479.999992847443" />
+        <EdgeLayout
+          Id="Package\load file from excel and flat.Paths[Case 1]"
+          TopLeft="817.066655997435,420.59999512732">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="112.733331351479,59.3999977201224"
+              Start="0,0"
+              End="112.733331351479,51.8999977201224">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.127421754359" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.127421754359"
+                    Point2="0,24.127421754359"
+                    Point3="4,24.127421754359" />
+                  <mssgle:LineSegment
+                    End="108.733331351479,24.127421754359" />
+                  <mssgle:CubicBezierSegment
+                    Point1="108.733331351479,24.127421754359"
+                    Point2="112.733331351479,24.127421754359"
+                    Point3="112.733331351479,28.127421754359" />
+                  <mssgle:LineSegment
+                    End="112.733331351479,51.8999977201224" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="41.1485797382394,29.127421754359,30.436171875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load file from excel and flat.Paths[Derived Column Output2]"
+          TopLeft="929.799987348914,521.599992847443">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54.3999992549423,48.199999269843"
+              Start="0,0"
+              End="54.3999992549423,40.699999269843">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.0999996349215" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.0999996349215"
+                    Point2="0,24.0999996349215"
+                    Point3="4,24.0999996349215" />
+                  <mssgle:LineSegment
+                    End="50.3999992549423,24.0999996349215" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.3999992549423,24.0999996349215"
+                    Point2="54.3999992549423,24.0999996349215"
+                    Point3="54.3999992549423,28.0999996349215" />
+                  <mssgle:LineSegment
+                    End="54.3999992549423,40.699999269843" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\load file from excel and flat\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\load file from excel and flat\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
